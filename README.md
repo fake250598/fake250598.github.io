@@ -1,3 +1,7 @@
-#SNAKE TEST GAME 
-    <a href="snake.html">GAME</a>
+#SNAKE TEST GAME
+
+fake250598.github.io
+
+
+<a href="snake.html">PLAY THE GAME</a>
 
