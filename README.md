@@ -1,5 +1,4 @@
-# fake250598.github.io
-snake test
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
