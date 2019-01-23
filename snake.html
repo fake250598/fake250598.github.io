@@ -37,12 +37,15 @@
         let score = 0;
         let dx = 10;
         let dy = 0;
+
         var gameCanvas = document.getElementById("gameCanvas");
         var ctx = gameCanvas.getContext("2d");
         ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
         ctx.strokestyle = CANVAS_BORDER_COLOUR;
         ctx.fillRect(0, 0, gameCanvas.width, gameCanvas.height);
         ctx.strokeRect(0, 0, gameCanvas.width, gameCanvas.height);
+
+
         main();
         createFood();
         document.addEventListener("keydown", changeDirection);
@@ -50,6 +53,7 @@
             if (didGameEnd()) return;
             
             setTimeout(function onTick() {
+                changingDirection = false;
                 clearCanvas();
                 drawFood();
                 advanceSnake();
@@ -114,6 +118,11 @@
             ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
         }
         function changeDirection(event) {
+
+            if (changingDirection) return;
+
+            changingDirection = true;
+
             const LEFT_KEY = 37;
             const RIGHT_KEY = 39;
             const UP_KEY = 38;
